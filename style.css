@@ -1,143 +1,140 @@
-header { /* initializing cover photo */
-  font-family: "Abril Fatface", cursive;
-  color: #222;
-  position: absolute;
-  display: flex;
-  top: 0;
-  text-align: left;
-  margin-left: 30%;
-  margin-right:30%;
+main {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-image : url(./Background/background.jpg);
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: 100% 100%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    color: #363837;
 }
 
- img { /* Anakin photo */
-  position: absolute;
-  width: 63em;
-  height: auto;
+.fullFrame, .mainFrame, .leftArrow, .rightArrow {
+    height: 40em;
 }
 
-.introduction { /* Hi, My name is Anakin Skywalker - text on photo */
-  position: relative;
-  text-align: left;
-  left: 7em;
-  top: 6em;
-  line-height: 0.7em;
-  font-size: 1.8em;
-  font-weight: 500;
-  line-height: 0;
-  overflow: hidden;
+.mainFrame, .subFrame, .mainImage {
+    width: 80em;
 }
 
-.my-name-is { /* correction for text style */
- margin-bottom: -0.5em; 
+.fullFrame {
+    position: relative;
+    display: flex;
+    top: 13.5em;
+    left: 0;
+    width: 90em;
+    /*border: 1px solid black;*/ /* ruler for sizing div boxes */
 }
 
-.anakin { /* correction for text style */
-  font-size: 1.95em;
-  width: 10em;
-/*  height: 1em;
-  background: red; */ /* box size check */
+.mainFrame {
+    position: relative;
+    display: flex;
+    /*border: 1px solid orange;*/ /* ruler for sizing div boxes */
 }
 
-main { /* all the text part under photo */
-  font-family: "Josefin Sans", sans-serif;
-  color: #222;
-  position: absolute;
-  top: 22em;
-  display: flex;
-  flex-wrap: wrap;
-  width: 50em;
-  padding-left: 6em;
-  text-align: left;
-  margin-left: 30%;
-  margin-right: 30%;
-  line-height: 1.5em;
-  font-weight: 200;
+.subFrame {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 10em;
+    padding-left: 2em;
+    line-height: 1.2em;
+    background: black;
+    opacity: 0;
+    /*border: 1px solid red;*/ /* ruler for sizing div boxes */
 }
 
-.start-cv, .first-list { /* first paragraph */
-  position: relative;
-  display: inline-block;
-  font-size: 1.15em;
-  margin: 1em 1em 3em 2em;
+.leftArrow, .rightArrow {
+    position: relative;
+    display: flex;
+    width: 5em;
+    /*border: 1px solid lime; */ /* ruler for sizing div boxes */
 }
 
-.first-list { /* correction */
-  margin-top: -2em;
-  margin-bottom: 3em;
+.arrowButtonL, .arrowButtonR {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    cursor: pointer;
+    background: lightgray;
 }
 
-.darker { /* highlighted words - correction */ 
-    font-weight: bold;  
+.arrowleft, .arrowright {
+    position: relative;
+    top: 3.4em;
+    margin-left: 0.1em;
+    font-size: 5em;
 }
 
-.black-box, .black-box-bigger { /* quotation boxes */
-  font-family: "Abril Fatface", cursive;
-  font-size: 2.8em;
-  color: white;
-  background: #525252;
-  height: 3em;
-  width: 100%;
-  line-height: 1.2em;
+.mainImage {
+    height: auto;
 }
 
-.black-box-bigger { /* box size correction */
-  padding-right: 2em;
-  height: 4.2em;
+/* start of scrollbar-setup */
+
+/* total width */
+.thumbBox::-webkit-scrollbar {
+    width: 6px;
+    height: 1em;
 }
 
-.quote { /* text formation */ 
-  position: relative;
-  top: -2.8em;
-  left: 1em;
-  color: white; 
-  letter-spacing: 0.03em;
+/* background of the scrollbar except button or resizer */
+.thumbBox::-webkit-scrollbar-track {
+/* transparent as empty */
 }
 
- blockquote:before { /* quotation mark positioning in box */
-  position: relative;
-  content: "\201C";
-  top: -0.3em;
-  left: -0.4em;
-  color: white;
-  font-size: 2.2em;
+/* scrollbar itself */
+.thumbBox::-webkit-scrollbar-thumb {
+    background-color:#454545;
 }
 
-h5 { /* formatting smallest text part */
-  font-size: 1em;
-  margin: 2em 1em 3em 0;
-  font-weight: 300;
+/* end of scrollbar-setup */
+
+.thumbBox {
+    position: absolute;
+    display: flex;
+    width: 90em;
+    height: 10em;
+    top: 54em;
+    overflow: auto;
+    /*border: 1px solid black;*/
 }
 
-ul { /* listed line parameters */ 
-  margin-top: -0.5em;
+ul {
+    display: flex;  
+    position: relative;
 }
 
-.capital-title { /*main paragraphs */ 
-  text-transform: uppercase;
-  margin: 2.3em 0 1.5em 0;
-  font-size: 1.5em;
+li {
+    margin: 0.3em;  
+    list-style-type:none;
+    overflow: hidden;
+    /*border: 1px solid black;*/
 }
 
-.title { /*sub paragraphs */
-  font-size: 1.4em;
-  margin: 2em 1em -0.5em 0;
+li:hover {
+    padding: 0.5em;
+    margin-top: 0.5em;
 }
 
-.subtitle {
-  font-size: 1em;
-  font-style: italic;
-  font-family: "Merriweather", serif;
-  margin: 1em 1em 2em 0;
-}
+.thumbImage {
+    width: 6em; /* Set a small width */
+    height: 6em;
+} 
 
-.black-line { /* line break */
-  background: #525252;
-  width: 100%;
-  height: 0.3em;
-  margin: 0;
-}
-
-.notable-achievements, .experience, .formal-training, .personal-interests { /* sections */
-  margin-left: 2em;
-  margin-right: 1em;
+.thumbButtons {
+    background: #4a4946;
+    margin-top: -0.3em;
+    margin-left: -0.6em;
+    width: 6.5em;
+    height: 6em;
+    cursor: pointer;
 }
